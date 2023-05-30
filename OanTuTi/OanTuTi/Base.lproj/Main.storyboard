@@ -28,18 +28,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="paper" title=""/>
+                                <connections>
+                                    <action selector="paperButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7t8-zg-Ifz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eI7-7X-ltz">
                                 <rect key="frame" x="289" y="714" width="88" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="scissor" title=""/>
+                                <connections>
+                                    <action selector="scissorButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SGZ-Ox-ojt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dk4-iv-dYV">
                                 <rect key="frame" x="16" y="715" width="88" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="rock" title="" cornerStyle="large"/>
+                                <connections>
+                                    <action selector="rockButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PKe-Zv-Iig"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -53,18 +62,11 @@
         <!--Result View Controller-->
         <scene sceneID="D48-y4-D0G">
             <objects>
-                <viewController id="mOr-AF-vDh" customClass="ResultViewController" customModule="OanTuTi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResultVC" id="mOr-AF-vDh" customClass="ResultViewController" customModule="OanTuTi" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NGs-Ab-Xuu">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIh-bD-w0a">
-                                <rect key="frame" x="145" y="134" width="102" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p4C-BT-vBf">
                                 <rect key="frame" x="45" y="313" width="110" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -93,7 +95,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="rock" title="" cornerStyle="large"/>
                                 <connections>
-                                    <action selector="rockHandButtonPressed:" destination="mOr-AF-vDh" eventType="touchUpInside" id="eiZ-SV-DuF"/>
+                                    <action selector="rockButtonPressed:" destination="mOr-AF-vDh" eventType="touchUpInside" id="Hje-5M-hNW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5i-cv-m2e">
@@ -114,6 +116,13 @@
                                     <action selector="scissorButtonPressed:" destination="mOr-AF-vDh" eventType="touchUpInside" id="o4O-qQ-teo"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIh-bD-w0a">
+                                <rect key="frame" x="105" y="129" width="183" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AVD-9T-pzv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -121,6 +130,7 @@
                     <connections>
                         <outlet property="comImageView" destination="c0u-p5-VoA" id="e4S-Gi-rBN"/>
                         <outlet property="myImageView" destination="p4C-BT-vBf" id="hYX-9Y-tLM"/>
+                        <outlet property="resultLabel" destination="sIh-bD-w0a" id="W6p-hk-VOT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDl-do-NPg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
